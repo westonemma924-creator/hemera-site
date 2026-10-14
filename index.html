@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hemera: one process fixed per video</title>
+<meta name="description" content="Hemera is an AI-generated character that shows operations teams how to fix one boring process at a time. Get the free Weekly Report Prompt Pack.">
+<style>
+:root{--bg:#0b1220;--panel:#121b2e;--line:#22304d;--text:#e8eefc;--muted:#9fb0cf;--cyan:#35e0ff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+header{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+.brand{font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.badge{font-size:13px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:4px 12px}
+h1{font-size:clamp(34px,7vw,52px);line-height:1.1;margin:36px 0 16px;padding-left:18px;border-left:3px solid var(--cyan)}
+.lead{color:var(--muted);font-size:19px;margin:0 0 28px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px;margin:28px 0}
+.card h2{margin:0 0 6px;font-size:22px}
+form{display:grid;gap:12px;margin-top:16px}
+input[type=email]{width:100%;padding:14px;border-radius:10px;border:1px solid var(--line);background:#0b1220;color:var(--text);font-size:17px}
+button{padding:14px;border:0;border-radius:10px;background:var(--cyan);color:#06222a;font-weight:700;font-size:17px;cursor:pointer}
+button:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid #fff;outline-offset:2px}
+.consent{display:flex;gap:10px;font-size:14px;color:var(--muted);align-items:flex-start}
+.consent input{margin-top:4px}
+a{color:var(--cyan)}
+ul{padding-left:20px}
+li{margin:6px 0}
+h3{margin:36px 0 8px}
+footer{border-top:1px solid var(--line);margin-top:48px;padding:24px 0 48px;color:var(--muted);font-size:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><span class="brand">Hemera</span><span class="badge">AI-generated character</span></header>
+<main>
+<h1>One process fixed per video.</h1>
+<p class="lead">Hemera is an AI character that shows operations teams how to fix one boring process at a time. Start with the free Weekly Report Prompt Pack.</p>
+
+<section class="card" id="signup" aria-labelledby="pack">
+<h2 id="pack">Free: Weekly Report Prompt Pack</h2>
+<p>A ready-to-use prompt that turns your raw weekly numbers into a first-draft summary: what changed, what moved, and the top risks.</p>
+
+<!-- ============================================================
+REPLACE THE FORM BELOW with the embed code from your email tool
+(MailerLite: Forms > Embedded forms > Create > Get the code).
+Keep the consent text and the privacy link next to the form.
+============================================================ -->
+<form id="signup-form" action="REPLACE_WITH_FORM_ACTION_URL" method="post">
+<label for="email" style="font-size:14px;color:var(--muted)">Email address</label>
+<input id="email" name="fields[email]" type="email" required autocomplete="email" placeholder="you@company.com">
+<label class="consent"><input type="checkbox" required> <span>I agree to receive emails from Hemera, including the free pack and occasional workflow tips. I can unsubscribe at any time. See the <a href="privacy.html">privacy policy</a>.</span></label>
+<button type="submit">Send me the free prompt pack</button>
+</form>
+</section>
+
+<h3>What you get</h3>
+<ul>
+<li>The exact prompt used in film 01, plus how to adapt it to your own report.</li>
+<li>A short checklist for removing sensitive data before you paste anything into an AI tool.</li>
+<li>One new process fix in your inbox when a new film goes live.</li>
+</ul>
+
+<h3>Who is behind this</h3>
+<p>Hemera is an AI-generated character, and we say so everywhere. Behind it is a real operations manager who tests each workflow before it goes into a video. The AI helps with images and voice. The scripts, the checks and the editing are human.</p>
+</main>
+<footer>
+<p>Hemera is an AI-generated character. Results vary: test every workflow on one example before relying on it. No company data or personal data should ever be pasted into an AI tool without checking your organisation's policy.</p>
+<p><a href="privacy.html">Privacy policy</a> &middot; &copy; Hemera</p>
+</footer>
+</div>
+</body>
+</html>
