@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Weekly Report Prompt Pack - Hemera</title>
+<style>
+:root{--bg:#0b1220;--panel:#121b2e;--line:#22304d;--text:#e8eefc;--muted:#9fb0cf;--cyan:#35e0ff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px 64px}
+header{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+.brand{font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text);text-decoration:none}
+.badge{font-size:13px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:4px 12px}
+h1{font-size:clamp(30px,6vw,44px);line-height:1.15;margin:28px 0 12px;padding-left:18px;border-left:3px solid var(--cyan)}
+h2{margin:40px 0 8px;font-size:22px}
+.lead{color:var(--muted);margin:0 0 24px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px;margin:16px 0}
+.card h3{margin:0 0 4px;font-size:18px}
+.card p{margin:0 0 12px;color:var(--muted);font-size:15px}
+pre{white-space:pre-wrap;word-wrap:break-word;background:#0b1220;border:1px solid var(--line);border-radius:10px;padding:14px;margin:0 0 12px;font:14px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--text)}
+button{padding:10px 16px;border:0;border-radius:10px;background:var(--cyan);color:#06222a;font-weight:700;font-size:15px;cursor:pointer}
+button:focus-visible,a:focus-visible{outline:3px solid #fff;outline-offset:2px}
+a{color:var(--cyan)}
+ul{padding-left:20px} li{margin:6px 0}
+footer{border-top:1px solid var(--line);margin-top:48px;padding:24px 0 0;color:var(--muted);font-size:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><a class="brand" href="index.html">Hemera</a><span class="badge">AI-generated character</span></header>
+<main>
+<h1>Weekly Report Prompt Pack</h1>
+<p class="lead">First, a short frame for what to report and why. Then five prompts that turn raw weekly numbers into a first-draft report. Copy one, paste your data in place of [paste], and edit the result.</p>
+
+<h2>Start here: why report at all</h2>
+<p>A weekly report is not paperwork. It is how you notice a problem on Tuesday instead of finding it on Friday. If you run a small company, you do finance, projects, people and sometimes marketing yourself, so the report is the one place where all four hats meet.</p>
+<p>A good report answers three questions, in this order:</p>
+<ul>
+<li><strong>What changed?</strong> Compared with last week, not with a perfect world.</li>
+<li><strong>Why do I think so?</strong> A hypothesis is fine. Mark it as one.</li>
+<li><strong>What do I do about it?</strong> One action, one owner, one date.</li>
+</ul>
+
+<h2>What to track: one metric, one decision</h2>
+<p>Track a number only if you know which decision it would change. If it changes nothing, drop it. Five to seven numbers are enough. These are examples, not benchmarks. Pick what fits your business.</p>
+<div class="card">
+<ul>
+<li><strong>Finance ops:</strong> cash in and out this week, overdue invoices (count and value), budget versus actual for your biggest cost line.</li>
+<li><strong>Projects:</strong> milestones on track versus late, open blockers, scope changes accepted this week.</li>
+<li><strong>People:</strong> open roles, overtime or absence in total (never by named person), handovers planned.</li>
+<li><strong>Marketing:</strong> new leads, how many replied, spend versus plan.</li>
+</ul>
+</div>
+<p>For each number write down three things once: where it comes from, who owns it, and at what size of change you want to be told. That is your reporting frame. It takes about 15 minutes and makes every later report faster.</p>
+<p>Not sure where you stand? Take the free <a href="check.html">Reporting Readiness Check</a> (3 minutes, 10 questions).</p>
+
+<h2>Where AI helps, and where it does not</h2>
+<p>AI is good at the slow part: comparing two tables, drafting the summary, rewriting it for another reader. It does not know your business, so you supply the data, the thresholds and the decisions. You check every number against its source before the report goes anywhere.</p>
+
+<h2>Before you start</h2>
+<ul>
+<li>Remove names, client data and anything confidential before you paste a table into an AI tool. Check your organisation's policy first.</li>
+<li>The AI writes a first draft. You read it and fix it. Never send anything you have not read.</li>
+<li>Test on one report and measure the time before and after.</li>
+</ul>
+
+<h2>The prompts</h2>
+
+<div class="card">
+<h3>1. What changed</h3>
+<p>Compare this week with last week in five bullets.</p>
+<pre id="p1">You are an operations analyst. Below is this week's data and last week's data.
+Summarize what changed in 5 bullet points. For each: the metric, the change
+(number and percent), and one plausible reason marked as "hypothesis".
+Do not invent data. If something is missing, say so.
+
+THIS WEEK:
+[paste]
+LAST WEEK:
+[paste]</pre>
+<button type="button" data-copy="p1">Copy prompt</button>
+</div>
+
+<div class="card">
+<h3>2. Flag the movers</h3>
+<p>See only what moved more than a threshold you choose.</p>
+<pre id="p2">From the data below, list every metric that moved more than [10]% versus last
+week. Show: metric, last week, this week, change %. Sort by size of change.
+Then list metrics that did NOT move, in one line.
+
+[paste]</pre>
+<button type="button" data-copy="p2">Copy prompt</button>
+</div>
+
+<div class="card">
+<h3>3. Risks and blockers</h3>
+<p>Turn the numbers and your notes into three risks with owners.</p>
+<pre id="p3">Based on the weekly data and notes below, list the top 3 risks for next week.
+For each: what could go wrong, how likely (low/medium/high, with your reasoning),
+and one concrete action with a suggested owner role.
+
+[paste]</pre>
+<button type="button" data-copy="p3">Copy prompt</button>
+</div>
+
+<div class="card">
+<h3>4. Executive TL;DR</h3>
+<p>The version your boss actually reads.</p>
+<pre id="p4">Rewrite the report below as: one sentence on overall status (on track / at risk /
+off track), three bullets of what matters, and one decision or help I need from
+the reader. Maximum 80 words. Plain language, no jargon.
+
+[paste report]</pre>
+<button type="button" data-copy="p4">Copy prompt</button>
+</div>
+
+<div class="card">
+<h3>5. Same report, different audience</h3>
+<p>One set of facts, a different level of detail.</p>
+<pre id="p5">Rewrite this report for [my manager / the finance team / a client]. Keep the facts
+identical. Change only the level of detail, the tone and the order. Tell me what you
+removed.
+
+[paste report]</pre>
+<button type="button" data-copy="p5">Copy prompt</button>
+</div>
+
+<h2>Mini checklist</h2>
+<ul>
+<li>Time before: ____ min. Time after: ____ min.</li>
+<li>Do the numbers match the source?</li>
+<li>Did anything confidential leave the company?</li>
+</ul>
+</main>
+<footer>
+<p>Hemera is an AI-generated character. Results vary: test every workflow on one example before relying on it. This pack is about processes, not financial, legal or medical advice.</p>
+<p><a href="index.html">Home</a> &middot; <a href="privacy.html">Privacy policy</a></p>
+</footer>
+</div>
+<script>
+document.querySelectorAll('button[data-copy]').forEach(function(b){
+  b.addEventListener('click',function(){
+    var t=document.getElementById(b.getAttribute('data-copy')).innerText;
+    var done=function(){var o=b.textContent;b.textContent='Copied';setTimeout(function(){b.textContent=o},1500)};
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,function(){})}
+    else{var r=document.createRange();r.selectNodeContents(document.getElementById(b.getAttribute('data-copy')));var s=getSelection();s.removeAllRanges();s.addRange(r);try{document.execCommand('copy');done()}catch(e){}}
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reporting Readiness Check - Hemera</title>
+<meta name="description" content="A 3-minute check: is your weekly report ready for decisions? Ten questions, instant score, one tip. Free. Your answers stay in your browser.">
+<style>
+:root{--bg:#0b1220;--panel:#121b2e;--line:#22304d;--text:#e8eefc;--muted:#9fb0cf;--cyan:#35e0ff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px 64px}
+header{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+.brand{font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text);text-decoration:none}
+.badge{font-size:13px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:4px 12px}
+h1{font-size:clamp(30px,6vw,44px);line-height:1.15;margin:28px 0 12px;padding-left:18px;border-left:3px solid var(--cyan)}
+h2{margin:32px 0 8px;font-size:22px}
+.lead{color:var(--muted);margin:0 0 24px}
+fieldset{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 20px 18px;margin:16px 0}
+legend{padding:0 8px;color:var(--cyan);font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+.q{margin:0 0 10px;font-size:17px}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opts label{position:relative;cursor:pointer}
+.opts input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
+.opts span{display:inline-block;padding:9px 16px;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:15px}
+.opts input:checked+span{background:var(--cyan);color:#06222a;border-color:var(--cyan);font-weight:700}
+.opts input:focus-visible+span{outline:3px solid #fff;outline-offset:2px}
+.qrow{padding:12px 0;border-top:1px solid var(--line)}
+.qrow:first-of-type{border-top:0;padding-top:4px}
+button{padding:14px 22px;border:0;border-radius:10px;background:var(--cyan);color:#06222a;font-weight:700;font-size:17px;cursor:pointer}
+button.ghost{background:transparent;color:var(--cyan);border:1px solid var(--line)}
+button:focus-visible,a:focus-visible{outline:3px solid #fff;outline-offset:2px}
+a{color:var(--cyan)}
+.msg{color:#ffd37a;min-height:1.6em;margin:8px 0}
+.result{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px;margin:24px 0}
+.score{font-size:44px;font-weight:700;line-height:1}
+.score small{font-size:20px;color:var(--muted);font-weight:400}
+.level{font-size:22px;margin:8px 0 6px}
+.bars{margin:18px 0}
+.bar{margin:10px 0}
+.bar .lab{display:flex;justify-content:space-between;font-size:14px;color:var(--muted)}
+.bar .track{height:10px;background:#0b1220;border:1px solid var(--line);border-radius:999px;overflow:hidden;margin-top:4px}
+.bar .fill{height:100%;background:var(--cyan)}
+.tip{border-left:3px solid var(--cyan);padding:2px 0 2px 14px;margin:16px 0}
+.hidden{display:none}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.actions a{display:inline-block;padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:700;border:1px solid var(--line)}
+.actions a.primary{background:var(--cyan);color:#06222a;border-color:var(--cyan)}
+footer{border-top:1px solid var(--line);margin-top:48px;padding:24px 0 0;color:var(--muted);font-size:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><a class="brand" href="index.html">Hemera</a><span class="badge">AI-generated character</span></header>
+<main>
+<h1>Reporting Readiness Check</h1>
+<p class="lead">Ten questions, about three minutes. You get a score, your weakest area and one thing to fix this week. Your answers stay in your browser: nothing is sent anywhere.</p>
+
+<form id="check" novalidate>
+<fieldset data-area="numbers"><legend>1. Numbers: what I measure</legend>
+<div class="qrow"><p class="q" id="q1">I can name the 5 to 7 numbers that matter most for my business this week.</p><div class="opts" role="radiogroup" aria-labelledby="q1"></div></div>
+<div class="qrow"><p class="q" id="q2">Each of those numbers has one clear source (a file, a system, a person).</p><div class="opts" role="radiogroup" aria-labelledby="q2"></div></div>
+<div class="qrow"><p class="q" id="q3">Each number has one owner who is responsible for it being right.</p><div class="opts" role="radiogroup" aria-labelledby="q3"></div></div>
+</fieldset>
+
+<fieldset data-area="signals"><legend>2. Signals: when I react</legend>
+<div class="qrow"><p class="q" id="q4">For each number I know the size of change that would make me act.</p><div class="opts" role="radiogroup" aria-labelledby="q4"></div></div>
+<div class="qrow"><p class="q" id="q5">I compare every week with the previous week in the same way (same period, same definition).</p><div class="opts" role="radiogroup" aria-labelledby="q5"></div></div>
+</fieldset>
+
+<fieldset data-area="action"><legend>3. Action: what follows</legend>
+<div class="qrow"><p class="q" id="q6">My weekly report ends with decisions or actions, each with an owner and a date.</p><div class="opts" role="radiogroup" aria-labelledby="q6"></div></div>
+<div class="qrow"><p class="q" id="q7">I know who reads the report and what they need to decide.</p><div class="opts" role="radiogroup" aria-labelledby="q7"></div></div>
+</fieldset>
+
+<fieldset data-area="time"><legend>4. Time and safety: how I do it</legend>
+<div class="qrow"><p class="q" id="q8">I know how long my weekly report takes me, and it takes less than one hour.</p><div class="opts" role="radiogroup" aria-labelledby="q8"></div></div>
+<div class="qrow"><p class="q" id="q9">The report is produced the same way every week (a template or a checklist).</p><div class="opts" role="radiogroup" aria-labelledby="q9"></div></div>
+<div class="qrow"><p class="q" id="q10">I know what data I must not paste into an AI tool (names, client data, confidential numbers).</p><div class="opts" role="radiogroup" aria-labelledby="q10"></div></div>
+</fieldset>
+
+<p class="msg" id="msg" role="status" aria-live="polite"></p>
+<button type="submit">Show my result</button>
+</form>
+
+<section id="result" class="result hidden" aria-live="polite" tabindex="-1">
+<div class="score"><span id="score"></span><small> / 20</small></div>
+<p class="level" id="level"></p>
+<p id="levelText"></p>
+<div class="bars" id="bars"></div>
+<div class="tip"><strong>Fix this first: <span id="weakName"></span></strong><br><span id="weakTip"></span></div>
+<div class="actions">
+<a class="primary" href="pack.html">Open the Weekly Report Prompt Pack</a>
+<a href="index.html#signup">Get the free pack by email</a>
+</div>
+<p style="margin-top:16px"><button type="button" class="ghost" id="again">Start again</button></p>
+<p class="msg" style="color:var(--muted);font-size:14px">This is a self-check about your reporting process, not financial, legal or medical advice. The score is a simple guide, not a benchmark.</p>
+</section>
+</main>
+<footer>
+<p>Hemera is an AI-generated character. Results vary: test every workflow on one example before relying on it. Answers on this page are calculated in your browser and are not stored or sent.</p>
+<p><a href="index.html">Home</a> &middot; <a href="pack.html">Prompt pack</a> &middot; <a href="privacy.html">Privacy policy</a></p>
+</footer>
+</div>
+<script>
+(function(){
+  var OPTS=[["Yes",2],["Partly",1],["No",0]];
+  var AREAS={
+    numbers:{name:"Numbers",qs:[1,2,3],tip:"Write five numbers on one page. Next to each, write one source and one owner. This takes about 15 minutes and makes every report faster."},
+    signals:{name:"Signals",qs:[4,5],tip:"For each number write one threshold: \"If it moves more than X, I act.\" Use the same week and the same definition every time."},
+    action:{name:"Action",qs:[6,7],tip:"End every report with up to three actions, each with a name and a date. Write down who reads the report and what they decide."},
+    time:{name:"Time and safety",qs:[8,9,10],tip:"Time one report this week. Then list what must never leave the company, and keep that list next to your template."}
+  };
+  var ORDER=["numbers","signals","action","time"];
+  var LEVELS=[
+    {max:7,name:"No frame yet",text:"You mostly report from memory and inbox. Start small: five numbers, one owner each. A reporting frame takes about 15 minutes to draft."},
+    {max:14,name:"Halfway there",text:"You track some numbers, but signals or actions are missing. Fix the weakest area first, then repeat the check next week."},
+    {max:20,name:"Ready to automate",text:"Your process is stable enough to speed up with AI. Start with the prompt for the report you like least, and check every number against its source."}
+  ];
+  var form=document.getElementById("check"),msg=document.getElementById("msg"),res=document.getElementById("result");
+  // build radios
+  document.querySelectorAll(".opts").forEach(function(box){
+    var qid=box.getAttribute("aria-labelledby");
+    OPTS.forEach(function(o,i){
+      var lab=document.createElement("label");
+      var inp=document.createElement("input");
+      inp.type="radio";inp.name=qid;inp.value=o[1];inp.id=qid+"_"+i;
+      var sp=document.createElement("span");sp.textContent=o[0];
+      lab.appendChild(inp);lab.appendChild(sp);box.appendChild(lab);
+    });
+  });
+  function val(n){var el=form.querySelector('input[name="q'+n+'"]:checked');return el?parseInt(el.value,10):null;}
+  form.addEventListener("submit",function(e){
+    e.preventDefault();
+    var scores={},total=0,missing=[];
+    for(var n=1;n<=10;n++){var v=val(n);if(v===null)missing.push(n);else{scores[n]=v;total+=v;}}
+    if(missing.length){
+      msg.textContent="Please answer all questions. Missing: "+missing.join(", ")+".";
+      var first=form.querySelector('input[name="q'+missing[0]+'"]');
+      if(first)first.focus();
+      return;
+    }
+    msg.textContent="";
+    var lvl=LEVELS.filter(function(l){return total<=l.max;})[0];
+    document.getElementById("score").textContent=total;
+    document.getElementById("level").textContent=lvl.name;
+    document.getElementById("levelText").textContent=lvl.text;
+    var bars=document.getElementById("bars");bars.innerHTML="";
+    var weak=null,weakPct=2;
+    ORDER.forEach(function(k){
+      var a=AREAS[k],sum=0;a.qs.forEach(function(q){sum+=scores[q];});
+      var max=a.qs.length*2,pct=sum/max;
+      if(pct<weakPct){weakPct=pct;weak=k;}
+      var d=document.createElement("div");d.className="bar";
+      d.innerHTML='<div class="lab"><span></span><span></span></div><div class="track"><div class="fill"></div></div>';
+      d.querySelectorAll("span")[0].textContent=a.name;
+      d.querySelectorAll("span")[1].textContent=sum+" / "+max;
+      d.querySelector(".fill").style.width=Math.round(pct*100)+"%";
+      bars.appendChild(d);
+    });
+    document.getElementById("weakName").textContent=AREAS[weak].name;
+    document.getElementById("weakTip").textContent=AREAS[weak].tip;
+    form.classList.add("hidden");res.classList.remove("hidden");res.focus();
+    window.scrollTo(0,res.offsetTop-20);
+  });
+  document.getElementById("again").addEventListener("click",function(){
+    form.reset();form.classList.remove("hidden");res.classList.add("hidden");window.scrollTo(0,0);
+  });
+})();
+</script>
+</body>
+</html>
