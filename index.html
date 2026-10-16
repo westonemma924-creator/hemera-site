@@ -27,6 +27,13 @@ a{color:var(--cyan)}
 ul{padding-left:20px}
 li{margin:6px 0}
 h3{margin:36px 0 8px}
+.hero{display:grid;grid-template-columns:1fr;gap:16px;align-items:center;margin:8px 0 0}
+.hero figure{margin:0;order:-1}
+.hero img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%;border-radius:18px;border:1px solid var(--line);box-shadow:0 0 60px rgba(53,224,255,.12)}
+.hero figcaption{font-size:13px;color:var(--muted);margin-top:8px}
+.hero h1{margin-top:12px}
+@media(min-width:720px){.hero{grid-template-columns:1fr 1fr;gap:36px}.hero figure{order:0}.hero h1{margin-top:0;font-size:clamp(32px,4.6vw,44px)}}
+@media(min-width:1000px){.wrap{max-width:960px}.hero{gap:48px}main>*:not(.hero){max-width:720px;margin-left:auto;margin-right:auto}footer{max-width:720px;margin-left:auto;margin-right:auto}}
 footer{border-top:1px solid var(--line);margin-top:48px;padding:24px 0 48px;color:var(--muted);font-size:14px}
 </style>
 <!-- MailerLite Universal -->
@@ -43,8 +50,13 @@ footer{border-top:1px solid var(--line);margin-top:48px;padding:24px 0 48px;colo
 <div class="wrap">
 <header><span class="brand">Hemera</span><span class="badge">AI-generated character</span></header>
 <main>
+<div class="hero">
+<div>
 <h1>Time is the one thing you can't hire.</h1>
 <p class="lead"><strong>Less busywork. More business.</strong> Hemera is an AI character that shows the person who runs everything how to fix one process at a time. Start with the free Weekly Report Prompt Pack.</p>
+</div>
+<figure><img src="hemera.webp" width="640" height="800" alt="Hemera, an AI-generated character with short navy hair, grey-blue skin and one thin glowing cyan line by the left eye, in a dark navy jacket in front of holographic dashboards" fetchpriority="high"><figcaption>Hemera. AI-generated character.</figcaption></figure>
+</div>
 
 <section class="card" id="signup" aria-labelledby="pack">
 <h2 id="pack">Free: Weekly Report Prompt Pack</h2>
