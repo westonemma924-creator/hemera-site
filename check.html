@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Reporting Readiness Check - Hemera</title>
 <meta name="description" content="A 3-minute check: is your weekly report ready for decisions? Ten questions, instant score, one tip. Free. Your answers stay in your browser.">
+<link rel="icon" href="hemera.webp" type="image/webp">
 <style>
 :root{--bg:#0b1220;--panel:#121b2e;--line:#22304d;--text:#e8eefc;--muted:#9fb0cf;--cyan:#35e0ff}
 *{box-sizing:border-box}
@@ -89,7 +90,7 @@ footer{border-top:1px solid var(--line);margin-top:48px;padding:24px 0 0;color:v
 <p class="level" id="level"></p>
 <p id="levelText"></p>
 <div class="bars" id="bars"></div>
-<div class="tip"><strong>Fix this first: <span id="weakName"></span></strong><br><span id="weakTip"></span></div>
+<div class="tip"><strong id="tipHead"></strong><br><span id="weakTip"></span></div>
 <div class="actions">
 <a class="primary" href="pack.html">Open the Weekly Report Prompt Pack</a>
 <a href="index.html#signup">Get the free pack by email</a>
@@ -159,8 +160,14 @@ footer{border-top:1px solid var(--line);margin-top:48px;padding:24px 0 0;color:v
       d.querySelector(".fill").style.width=Math.round(pct*100)+"%";
       bars.appendChild(d);
     });
-    document.getElementById("weakName").textContent=AREAS[weak].name;
-    document.getElementById("weakTip").textContent=AREAS[weak].tip;
+    var head=document.getElementById("tipHead"),tipEl=document.getElementById("weakTip");
+    if(weakPct>=1){
+      head.textContent="Nothing weak right now";
+      tipEl.textContent="All four areas are at full score. Repeat the check once a month, and use the pack to speed up the report you like least.";
+    }else{
+      head.textContent="Fix this first: "+AREAS[weak].name;
+      tipEl.textContent=AREAS[weak].tip;
+    }
     form.classList.add("hidden");res.classList.remove("hidden");res.focus();
     window.scrollTo(0,res.offsetTop-20);
   });

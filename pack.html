@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
 <title>Weekly Report Prompt Pack - Hemera</title>
+<link rel="icon" href="hemera.webp" type="image/webp">
 <style>
 :root{--bg:#0b1220;--panel:#121b2e;--line:#22304d;--text:#e8eefc;--muted:#9fb0cf;--cyan:#35e0ff}
 *{box-sizing:border-box}
@@ -33,7 +34,7 @@ footer{border-top:1px solid var(--line);margin-top:48px;padding:24px 0 0;color:v
 <header><a class="brand" href="index.html"><img class="av" src="hemera.webp" width="36" height="36" alt="">Hemera</a><span class="badge">AI-generated character</span></header>
 <main>
 <h1>Weekly Report Prompt Pack</h1>
-<p class="lead">First, a short frame for what to report and why. Then five prompts that turn raw weekly numbers into a first-draft report. Copy one, paste your data in place of [paste], and edit the result.</p>
+<p class="lead">First, a short frame for what to report and why. Then the all-in-one prompt from film 01 and five single-purpose prompts that turn raw weekly numbers into a first-draft report. Copy one, paste your data in place of [paste], and edit the result.</p>
 
 <h2>Start here: why report at all</h2>
 <p>A weekly report is not paperwork. It is how you notice a problem on Tuesday instead of finding it on Friday. If you run a small company, you do finance, projects, people and sometimes marketing yourself, so the report is the one place where all four hats meet.</p>
@@ -61,6 +62,18 @@ footer{border-top:1px solid var(--line);margin-top:48px;padding:24px 0 0;color:v
 <p>AI is good at the slow part: comparing two tables, drafting the summary, rewriting it for another reader. It does not know your business, so you supply the data, the thresholds and the decisions. You check every number against its source before the report goes anywhere.</p>
 
 <h2>Before you start</h2>
+<div class="card">
+<h3>Data checklist: before you paste anything</h3>
+<p>Do this once per report, then keep the list next to your template.</p>
+<ul>
+<li>Replace names of people with roles or codes (Person A, Team lead).</li>
+<li>Replace client and supplier names with codes. Keep the key in a separate file, not in the prompt.</li>
+<li>Remove emails, phone numbers, ID and account numbers, and contract values you are not allowed to share.</li>
+<li>Never paste pay, health or absence data linked to a named person.</li>
+<li>Read free-text notes: names hide in comments and email threads.</li>
+<li>Check your organisation's AI policy and the tool's data settings before you start.</li>
+</ul>
+</div>
 <ul>
 <li>Remove names, client data and anything confidential before you paste a table into an AI tool. Check your organisation's policy first.</li>
 <li>The AI writes a first draft. You read it and fix it. Never send anything you have not read.</li>
@@ -68,6 +81,24 @@ footer{border-top:1px solid var(--line);margin-top:48px;padding:24px 0 0;color:v
 </ul>
 
 <h2>The prompts</h2>
+
+<div class="card">
+<h3>0. Film 01: all in one</h3>
+<p>The prompt from the first film: changes, movers and risks in one go.</p>
+<pre id="p0">You are an operations analyst. Below is this week's data and last week's data.
+1) Summarize what changed versus last week in 5 bullet points (metric, change in
+   number and percent).
+2) Flag every metric that moved more than [10]%.
+3) List the top 3 risks for next week, each with one concrete action.
+Mark every explanation as "hypothesis". Do not invent data. If something is
+missing, say so.
+
+THIS WEEK:
+[paste]
+LAST WEEK:
+[paste]</pre>
+<button type="button" data-copy="p0">Copy prompt</button>
+</div>
 
 <div class="card">
 <h3>1. What changed</h3>
